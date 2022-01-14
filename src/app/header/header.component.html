@@ -54,30 +54,30 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form #f="ngForm">
             <div class="mb-3">
               <label for="inputId" class="form-label">Id</label>
-              <input type="number" class="form-control" id="inputId" aria-describedby="inputId" placeholder="Digite...">
+              <input type="number" class="form-control" id="inputId" aria-describedby="inputId" placeholder="Digite..." name="id" [(ngModel)]="card.id">
             </div>
             <div class="mb-3">
               <label for="inputName" class="form-label">Nome</label>
-              <input type="text" class="form-control" id="inputName" aria-describedby="inputName" placeholder="Digite...">
+              <input type="text" class="form-control" id="inputName" aria-describedby="inputName" placeholder="Digite..." name="nome" [(ngModel)]="card.nome">
             </div>
             <div class="mb-3">
               <span for="inputDescription">Descrição</span>
-              <textarea class="form-control" placeholder="Digite..." id="inputDescription"></textarea>
+              <textarea class="form-control" placeholder="Digite..." id="inputDescription" name="descricao" [(ngModel)]="card.descricao"></textarea>
             </div>
             <div class="mb-3">
               <label for="inputAtack" class="form-label">Ataque</label>
-              <input type="number" class="form-control" id="inputAtack" aria-describedby="inputAtack" placeholder="Digite...">
+              <input type="number" class="form-control" id="inputAtack" aria-describedby="inputAtack" placeholder="Digite..." name="ataque" [(ngModel)]="card.ataque">
             </div>
             <div class="mb-3">
               <label for="inputDefense" class="form-label">Defesa</label>
-              <input type="email" class="form-control" id="inputDefense" aria-describedby="inputDefense" placeholder="Digite...">
+              <input type="email" class="form-control" id="inputDefense" aria-describedby="inputDefense" placeholder="Digite..." name="defesa" [(ngModel)]="card.defesa">
             </div>
             <div id="selectTypeModal" class="mb-3 d-flex flex-column">
               <label for="selectType" class="form-label">Tipo</label>
-              <select class="form-select" aria-label="Tipo">
+              <select class="form-select" aria-label="Tipo" name="tipo" [(ngModel)]="card.tipo" >
                 <option class="option1" selected>Escolha um abaixo</option>
                 <option value="1">Magia</option>
                 <option value="2">Criatura</option>
@@ -85,7 +85,7 @@
             </div>
             <div id="selectClassModal" class="mb-3">
               <label for="selectClass" class="form-label">Classes</label>
-              <select class="form-select" aria-label="Classes">
+              <select class="form-select" aria-label="Classes" name="classe" [(ngModel)]="card.classe" >
                 <option class="option1" selected>Escolha uma abaixo</option>
                 <option value="1">Mago</option>
                 <option value="2">Paladino</option>
@@ -94,11 +94,11 @@
                 <option value="5">Qualquer</option>
               </select>
             </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-light" data-bs-dismiss="modal">Fechar</button>
+              <button type="button" id="btnSave" class="btn btn-secondary" (click)="onSubmit(f)" data-bs-dismiss="modal">Salvar</button>
+            </div>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Fechar</button>
-          <button type="button" id="btnSave" class="btn btn-secondary">Salvar</button>
         </div>
       </div>
     </div>
