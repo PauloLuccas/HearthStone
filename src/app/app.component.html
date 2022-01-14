@@ -82,13 +82,7 @@
     height: 100%;
   }
 
-  /* Estilizando os botões e inputs
-  
-  #c3b189 - fundo
-  #614327 - letra
-  #3f3831 - fundo select
-  3d0d0d
-  */
+  /* Estilizando os botões e inputs */
 
   #inputNameOrId input,
   #selectClass select,
@@ -185,6 +179,58 @@
   transform: rotateY(180deg);
 }
 
+#modalInsertCart .modal-content {
+  background: #3d0d0d;
+  border: 3px solid #af8c59;
+}
+
+#modalInsertCart h5,
+#modalInsertCart .modal-content label,
+#modalInsertCart .modal-content span {
+  color: #fff;
+}
+
+#modalInsertCart .modal-footer #btnSave {
+  background: #c3b189;
+  border: 3px solid #af8c59;
+  color: #212429;
+  transition: all .5s;
+}
+
+#modalInsertCart .modal-footer #btnSave:hover {
+  background: #3d0d0d;
+  color: #fff;
+}
+
+input#inputId,
+input#inputName,
+textarea#inputDescription,
+input#inputAtack,
+input#inputDefense,
+#selectTypeModal select,
+#selectClassModal select {
+  border-radius: 1rem;
+  background: #c3b189;
+  border: 3px solid #af8c59;
+  box-shadow: 0rem 0rem 0.4rem black;
+}
+
+input#inputId::placeholder,
+input#inputName::placeholder,
+textarea#inputDescription::placeholder,
+input#inputAtack::placeholder,
+input#inputDefense::placeholder {
+  color: #212429;
+}
+
+#selectClassModal select,
+#selectTypeModal select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+}
+
 </style>
 
 <header class="bg-header d-flex justify-content-center align-items-center flex-column">
@@ -224,7 +270,9 @@
           </li>
           <li>
             <div id="btnSubmit">
-              <button type="button" class="btn btn-secondary">Incluir carta</button>
+              <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalInsertCart">
+                Incluir carta
+              </button>
             </div>
           </li>
         </ul>
@@ -288,3 +336,62 @@
     </div>
   </div>
 </section>
+
+<!-- Modal -->
+<div class="modal fade" id="modalInsertCart" tabindex="-1" aria-labelledby="modalInsertCart" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalInsertCart">Nova Carta</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="inputId" class="form-label">Id</label>
+            <input type="number" class="form-control" id="inputId" aria-describedby="inputId" placeholder="Digite...">
+          </div>
+          <div class="mb-3">
+            <label for="inputName" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="inputName" aria-describedby="inputName" placeholder="Digite...">
+          </div>
+          <div class="mb-3">
+            <span for="inputDescription">Descrição</span>
+            <textarea class="form-control" placeholder="Digite..." id="inputDescription"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="inputAtack" class="form-label">Ataque</label>
+            <input type="number" class="form-control" id="inputAtack" aria-describedby="inputAtack" placeholder="Digite...">
+          </div>
+          <div class="mb-3">
+            <label for="inputDefense" class="form-label">Defesa</label>
+            <input type="email" class="form-control" id="inputDefense" aria-describedby="inputDefense" placeholder="Digite...">
+          </div>
+          <div id="selectTypeModal" class="mb-3 d-flex flex-column">
+            <label for="selectType" class="form-label">Tipo</label>
+            <select class="form-select" aria-label="Tipo">
+              <option class="option1" selected>Escolha um abaixo</option>
+              <option value="1">Magia</option>
+              <option value="2">Criatura</option>
+            </select>
+          </div>
+          <div id="selectClassModal" class="mb-3">
+            <label for="selectClass" class="form-label">Classes</label>
+            <select class="form-select" aria-label="Classes">
+              <option class="option1" selected>Escolha uma abaixo</option>
+              <option value="1">Mago</option>
+              <option value="2">Paladino</option>
+              <option value="3">Caçador</option>
+              <option value="4">Druida</option>
+              <option value="5">Qualquer</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" id="btnSave" class="btn btn-secondary">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
