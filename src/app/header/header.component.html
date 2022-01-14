@@ -1,0 +1,105 @@
+<header class="bg-header d-flex justify-content-center align-items-center flex-column">
+    <div class="logo_name d-flex justify-content-center align-items-center flex-column">
+      <img src="../assets/images/logo_small_hs.png" alt="Logo">
+      <h1 class="text-light">HearthStone</h1>
+    </div>
+    <div class="nav-bar d-flex align-items-end">
+      <nav class="d-flex align-items-center">
+        <div class="container">
+          <ul class="d-flex justify-content-between w-100">
+            <li>
+              <div class="mb-3" id="inputNameOrId">
+                <input type="text" class="form-control" placeholder="Pesquisar">
+              </div>
+            </li>
+            <li>
+              <div id="selectClass">
+                <select class="form-select" aria-label="Classes">
+                  <option class="option1" selected>Escolha uma abaixo</option>
+                  <option value="1">Mago</option>
+                  <option value="2">Paladino</option>
+                  <option value="3">Caçador</option>
+                  <option value="4">Druida</option>
+                  <option value="5">Qualquer</option>
+                </select>
+              </div>
+            </li>
+            <li>
+              <div id="selectType">
+                <select class="form-select" aria-label="Tipo">
+                  <option class="option1" selected>Escolha um abaixo</option>
+                  <option value="1">Magia</option>
+                  <option value="2">Criatura</option>
+                </select>
+              </div>
+            </li>
+            <li>
+              <div id="btnSubmit">
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalInsertCart">
+                  Incluir carta
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- Modal -->
+<div class="modal fade" id="modalInsertCart" tabindex="-1" aria-labelledby="modalInsertCart" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalInsertCart">Nova Carta</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="inputId" class="form-label">Id</label>
+              <input type="number" class="form-control" id="inputId" aria-describedby="inputId" placeholder="Digite...">
+            </div>
+            <div class="mb-3">
+              <label for="inputName" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="inputName" aria-describedby="inputName" placeholder="Digite...">
+            </div>
+            <div class="mb-3">
+              <span for="inputDescription">Descrição</span>
+              <textarea class="form-control" placeholder="Digite..." id="inputDescription"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="inputAtack" class="form-label">Ataque</label>
+              <input type="number" class="form-control" id="inputAtack" aria-describedby="inputAtack" placeholder="Digite...">
+            </div>
+            <div class="mb-3">
+              <label for="inputDefense" class="form-label">Defesa</label>
+              <input type="email" class="form-control" id="inputDefense" aria-describedby="inputDefense" placeholder="Digite...">
+            </div>
+            <div id="selectTypeModal" class="mb-3 d-flex flex-column">
+              <label for="selectType" class="form-label">Tipo</label>
+              <select class="form-select" aria-label="Tipo">
+                <option class="option1" selected>Escolha um abaixo</option>
+                <option value="1">Magia</option>
+                <option value="2">Criatura</option>
+              </select>
+            </div>
+            <div id="selectClassModal" class="mb-3">
+              <label for="selectClass" class="form-label">Classes</label>
+              <select class="form-select" aria-label="Classes">
+                <option class="option1" selected>Escolha uma abaixo</option>
+                <option value="1">Mago</option>
+                <option value="2">Paladino</option>
+                <option value="3">Caçador</option>
+                <option value="4">Druida</option>
+                <option value="5">Qualquer</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" id="btnSave" class="btn btn-secondary">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
