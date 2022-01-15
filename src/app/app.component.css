@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&display=swap');
+
+body {
+  background-color: #bfb08a;
+}
+
+.bg-header {
+  background-image: url('../assets/images/bg_cardgallery_header_standard.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  width: 100%;
+  height: 450px;
+}
+
+.logo_name {
+  height: 83%;
+  width: 100%;
+}
+
+.logo_name img {
+  width: 80px;
+}
+
+.logo_name h1 {
+  font-family: 'Germania One', cursive;
+  letter-spacing: 3px;
+  color: rgb(255, 255, 255);
+  filter: drop-shadow(rgb(0, 0, 0) 2px 2px 5px);
+}
+
+.nav-bar::before {
+  content: "";
+  position: absolute;
+  background-image: url('../assets/images/wood_left-4ba7c0885d48f7571e2220d7796d83de1ad1e99db229b0b48b5cd337bae85193adc094fa74208aa5005382ac1100cce651cbfbb0a99e94d566a88e0868dff9ab.png');
+  background-size: 134px 73px;
+  background-position: top;
+  background-repeat: repeat-x;
+  left: -3px;
+  width: 134px;
+  height: 73px;
+  z-index: 0;
+}
+
+.nav-bar::after {
+  content: "";
+  position: absolute;
+  background-image: url('../assets/images/wood_right-3e25046de5293e65b417b103aaf4e28b46b8d54f0000c87bdf876f55df124b9b2778e41e248239ad768ee550d61e175f8fe7911d1edce7b2163a362b32090d1d.png');
+  background-size: 134px 73px;
+  background-position: top;
+  background-repeat: repeat-x;
+  right: 0;
+  width: 134px;
+  height: 73px;
+  z-index: 0;
+}
+
+.nav-bar {
+  background-image: url('../assets/images/wood_middle_repeat-b357e74839b5f16173c2f35d36ce22cae24d5b552e2eb1dd1fd7d3091eeccca8eb8ab5c0a2c42e9476357ac2c744e8e22ddc08c5d27be8c670fb9630065a9c01.png');
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 17%;
+}
+
+.nav-bar nav ul li {
+  list-style: none;
+  z-index: 3;
+}
+
+#inputNameOrId,
+#selectClass,
+#selectType,
+#btnSubmit {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.nav-bar nav {
+  width: 100%;
+  height: 100%;
+}
+
+/* Estilizando os botões e inputs */
+
+#inputNameOrId input,
+#selectClass select,
+#selectType select {
+  border-radius: 1rem;
+  background: #c3b189;
+  border: 3px solid #af8c59;
+  box-shadow: 0rem 0rem 0.4rem black;
+}
+
+#selectClass select,
+#selectType select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+}
+
+#inputNameOrId input {
+  transition: all .5s;
+}
+
+#inputNameOrId input::placeholder {
+  color: #212429;
+}
+
+#inputNameOrId input:focus {
+  border: 3px solid #3d0d0d;
+}
+
+#btnSubmit button {
+  border-radius: 1rem;
+  background: #3d0d0d;
+  border: 2px solid #af8c59;
+  transition: all .5s;
+}
+
+#btnSubmit button:hover {
+  background: #c3b189;
+  color: #212429;
+}
+
+/* section .container {
+  border: 1px solid red;
+} */
+
+.bg-section .card {
+  /* background-image: url('../assets/images/hearthstone-verso-clssico.png');
+  background-size: contain;
+  background-repeat: no-repeat; */
+  width: 200px;
+  height: 300px;
+  background: transparent;
+}
+
+.flip-card {
+background-color: transparent;
+width: 200px;
+height: 300px;
+perspective: 1000px; 
+}
+
+.flip-card-inner {
+position: relative;
+width: 100%;
+height: 100%;
+text-align: center;
+transition: transform 0.8s;
+transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+position: absolute;
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+}
+
+.flip-card-front {
+width: 200px;
+height: 300px;
+background: transparent;
+}
+
+.flip-card-back {
+  position: relative;
+background-color: #3d0d0d;
+color: white;
+width: 200px;
+height: 300px;
+border-radius: 5px;
+transform: rotateY(180deg);
+padding: 10px;
+}
+
+.flip-card-back h4 {
+  color: #af8c59;
+  font-size: 1.2rem;
+}
+
+.flip-card-back .commands {
+  position: absolute;
+  right: 0;
+  bottom: 1rem;
+}
+
+#modalInsertCart .modal-content,
+#modalUpdateCart .modal-content  {
+background: #3d0d0d;
+border: 3px solid #af8c59;
+}
+
+#modalInsertCart h5,
+#modalUpdateCart h5,
+#modalInsertCart .modal-content label,
+#modalUpdateCart .modal-content label,
+#modalInsertCart .modal-content span,
+#modalUpdateCart .modal-content span {
+color: #fff;
+}
+
+#modalInsertCart .modal-footer #btnSave,
+#modalUpdateCart .modal-footer #btnSave {
+background: #c3b189;
+border: 3px solid #af8c59;
+color: #212429;
+transition: all .5s;
+}
+
+#modalInsertCart .modal-footer #btnSave:hover,
+#modalUpdateCart .modal-footer #btnSave:hover {
+background: #3d0d0d;
+color: #fff;
+}
+
+input#inputId,
+input#inputName,
+textarea#inputDescription,
+input#inputAtack,
+input#inputDefense,
+#selectTypeModal select,
+#selectClassModal select {
+border-radius: 1rem;
+background: #c3b189;
+border: 3px solid #af8c59;
+box-shadow: 0rem 0rem 0.4rem black;
+}
+
+input#inputId::placeholder,
+input#inputName::placeholder,
+textarea#inputDescription::placeholder,
+input#inputAtack::placeholder,
+input#inputDefense::placeholder {
+color: #212429;
+}
+
+#selectClassModal select,
+#selectTypeModal select {
+background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+background-repeat: no-repeat;
+background-position: right 0.75rem center;
+background-size: 16px 12px;
+}
+
+h3.title{
+  font-family: 'Germania One', cursive;
+  letter-spacing: 3px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.btn-outline-warning,
+.btn-outline-danger {
+  border-radius: 50%;
+}

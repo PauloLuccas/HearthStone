@@ -19,11 +19,8 @@ export class LocalStorageService {
     return false;
   }
 
-  get(key: string): any {
-    if (this.storage) {
-      return this.storage.getItem(key);
-    }
-    return false;
+  get(key: string) {
+    return this.storage.getItem(key);
   }
 
   remove(key: string): boolean {
