@@ -28,3 +28,4 @@ Execute `ng serve` para um servidor dev. Navegue até `http://localhost:4200/`. 
 <div align="center">
   <small>Desenvolvido por Paulo Lucas - Janeiro/2022</small>
 </div>
+# HearthStone
